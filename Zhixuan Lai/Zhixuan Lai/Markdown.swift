@@ -497,7 +497,7 @@ public struct Markdown {
     private mutating func linkEvaluator(match: Match) -> String
     {
         let linkID = match.valueOfGroupAtIndex(1)
-        _urls[linkID] = encodeAmpsAndAngles(match.valueOfGroupAtIndex(2) as String)
+        _urls[linkID as String] = encodeAmpsAndAngles(match.valueOfGroupAtIndex(2) as String)
         
         let group3Value = match.valueOfGroupAtIndex(3)
         if group3Value.length != 0 {
@@ -666,7 +666,7 @@ public struct Markdown {
     private mutating func htmlEvaluator(match: Match) -> String {
         let text = match.valueOfGroupAtIndex(1) ?? ""
         let key = Markdown.getHashKey(text as String, isHtmlBlock: true)
-        _htmlBlocks[key] = text
+        _htmlBlocks[key] = text as String
     
         return "\n\n\(key)\n\n"
     }
@@ -841,7 +841,7 @@ public struct Markdown {
             result += ">\(linkText)</a>"
         }
         else {
-            result = wholeMatch
+            result = wholeMatch as String
         }
         
         return result
@@ -966,7 +966,7 @@ public struct Markdown {
         if url.hasPrefix("<") && url.hasSuffix(">") {
             url = url.substringWithRange(NSMakeRange(1, url.length - 2))    // Remove <>'s surrounding URL, if present
         }
-        return imageTag(url, altText: alt as String, title: title)
+        return imageTag(url as String, altText: alt as String, title: title as String)
     }
     
     private func imageTag(var url: String, var altText: String, var title: String?) -> String {
@@ -1114,7 +1114,7 @@ public struct Markdown {
             let listType = Regex.isMatch(match.valueOfGroupAtIndex(3) as String, pattern: Markdown._markerUL) ? "ul" : "ol"
             var result: String
         
-            result = self.processListItems(list,
+            result = self.processListItems(list as String,
                 marker: listType == "ul" ? Markdown._markerUL : Markdown._markerOL,
                 isInsideParagraphlessListItem: isInsideParagraphlessListItem)
         
@@ -1349,7 +1349,7 @@ public struct Markdown {
         
         bq = "<blockquote>\n\(bq)\n</blockquote>"
         let key = Markdown.getHashKey(bq as String, isHtmlBlock: true)
-        _htmlBlocks[key] = bq
+        _htmlBlocks[key] = bq as String
         
         return "\n\n\(key)\n\n"
     }
@@ -1401,7 +1401,7 @@ public struct Markdown {
         }
         var tail: NSString = ""
         if level < 0 {
-            link = Regex.replace(link as String, pattern: "\\){1,\(-level)}$", { m in
+            link = Regex.replace(link as String, pattern: "\\){1,\(-level)}$", evaluator: { m in
                 tail = m.value
                 return ""
             })

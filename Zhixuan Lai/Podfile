@@ -1,12 +1,17 @@
 # Uncomment this line to define a global platform for your project
 # platform :ios, '6.0'
 
-target 'Zhixuan Lai' do
 pod 'AsyncDisplayKit'
 pod 'pop'
-end
+pod 'SVWebViewController'
+pod 'ZLBalancedFlowLayout'
+pod 'ZLSwipeableView'
+pod 'ReactiveUI'
+pod 'SwiftyJSON'
+pod 'TTTAttributedLabel'
 
-target 'Zhixuan LaiTests' do
 
-end
+link_with 'Zhixuan Lai', 'Zhixuan LaiTests'
 
+
+use_frameworks!

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZLBalancedFlowLayout
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+//        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//        if let window = window {
+//            var viewController = ZLMainTableViewController(style: .Grouped)
+//            window.rootViewController = UINavigationController(rootViewController: viewController)
+//            window.makeKeyAndVisible()
+//        }
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        if let window = window {
+            var layout = ZLBalancedFlowLayout()
+            layout.headerReferenceSize = CGSize(width: 100, height: 100)
+            layout.footerReferenceSize = CGSize(width: 100, height: 100)
+            layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+            var viewController = ZLMainCollectionViewController(collectionViewLayout: layout)
+            window.rootViewController = UINavigationController(rootViewController: viewController)
+            window.makeKeyAndVisible()
+        }
+
         return true
     }
 

@@ -1,5 +1,5 @@
 //
-//  LabelCollectionReusableView.swift
+//  ZLCollectionReusableView.swift
 //  ZLBalancedFlowLayoutDemo
 //
 //  Created by Zhixuan Lai on 12/24/14.
@@ -8,27 +8,27 @@
 
 import UIKit
 
-class LabelCollectionReusableView: UICollectionReusableView {
-    var textLabel = UILabel()
+class ZLCollectionReusableView: UICollectionReusableView {
+//    var headerView = ZLSectionHeaderView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+//        setup()
     }
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
+//        setup()
     }
     
-    func setup() {
-        backgroundColor = UIColor.lightGrayColor()
-        textLabel.textColor = UIColor.blackColor()
-        textLabel.textAlignment = .Center
-        addSubview(textLabel)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        textLabel.frame = self.bounds
-    }
+//    func setup() {
+////        backgroundColor = UIColor.lightGrayColor()
+////        headerView.textColor = UIColor.blackColor()
+////        headerView.textAlignment = .Center
+//        addSubview(headerView)
+//    }
+//    
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        headerView.frame = self.bounds
+//    }
 }
