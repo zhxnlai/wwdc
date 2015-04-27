@@ -11,6 +11,13 @@
 		090C61381AEC3D6F009B5BB3 /* ZLCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090C61371AEC3D6F009B5BB3 /* ZLCollectionReusableView.swift */; };
 		091AB6B51AEC64F600FF5B6D /* Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091AB6B41AEC64F600FF5B6D /* Markdown.swift */; };
 		091AB6BC1AED5E5E00FF5B6D /* ZLCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091AB6BB1AED5E5E00FF5B6D /* ZLCollectionViewCell.swift */; };
+		091AB6BE1AED7A0500FF5B6D /* ZLWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091AB6BD1AED7A0500FF5B6D /* ZLWebViewController.swift */; };
+		091AB6C01AED92A400FF5B6D /* me.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 091AB6BF1AED92A400FF5B6D /* me.jpg */; };
+		091AB6C21AED92F600FF5B6D /* home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 091AB6C11AED92F600FF5B6D /* home.jpg */; };
+		091AB6C41AEDA5A500FF5B6D /* swipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 091AB6C31AEDA5A500FF5B6D /* swipe.png */; };
+		091AB6C61AEDA61000FF5B6D /* balancedVerticalLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 091AB6C51AEDA61000FF5B6D /* balancedVerticalLandscape.png */; };
+		091AB6C81AEDA8EB00FF5B6D /* balancedVertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 091AB6C71AEDA8EB00FF5B6D /* balancedVertical.png */; };
+		091AB6CE1AEDAE4D00FF5B6D /* CamlBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 091AB6CD1AEDAE4D00FF5B6D /* CamlBack.png */; };
 		09614C7F1AEC4E52002C1F22 /* horoscoper.png in Resources */ = {isa = PBXBuildFile; fileRef = 09614C751AEC4E52002C1F22 /* horoscoper.png */; };
 		09614C801AEC4E52002C1F22 /* intersolar.png in Resources */ = {isa = PBXBuildFile; fileRef = 09614C761AEC4E52002C1F22 /* intersolar.png */; };
 		09614C811AEC4E52002C1F22 /* intersolar2.png in Resources */ = {isa = PBXBuildFile; fileRef = 09614C771AEC4E52002C1F22 /* intersolar2.png */; };
@@ -65,6 +72,13 @@
 		091AB6B41AEC64F600FF5B6D /* Markdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Markdown.swift; sourceTree = "<group>"; };
 		091AB6B71AEC691400FF5B6D /* Zhixuan Lai-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zhixuan Lai-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		091AB6BB1AED5E5E00FF5B6D /* ZLCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLCollectionViewCell.swift; sourceTree = "<group>"; };
+		091AB6BD1AED7A0500FF5B6D /* ZLWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLWebViewController.swift; sourceTree = "<group>"; };
+		091AB6BF1AED92A400FF5B6D /* me.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = me.jpg; sourceTree = "<group>"; };
+		091AB6C11AED92F600FF5B6D /* home.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = home.jpg; sourceTree = "<group>"; };
+		091AB6C31AEDA5A500FF5B6D /* swipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swipe.png; sourceTree = "<group>"; };
+		091AB6C51AEDA61000FF5B6D /* balancedVerticalLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = balancedVerticalLandscape.png; sourceTree = "<group>"; };
+		091AB6C71AEDA8EB00FF5B6D /* balancedVertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = balancedVertical.png; sourceTree = "<group>"; };
+		091AB6CD1AEDAE4D00FF5B6D /* CamlBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CamlBack.png; sourceTree = "<group>"; };
 		09614C751AEC4E52002C1F22 /* horoscoper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horoscoper.png; sourceTree = "<group>"; };
 		09614C761AEC4E52002C1F22 /* intersolar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intersolar.png; sourceTree = "<group>"; };
 		09614C771AEC4E52002C1F22 /* intersolar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intersolar2.png; sourceTree = "<group>"; };
@@ -118,7 +132,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		090C61341AEC28AE009B5BB3 /* old */ = {
+		090C61341AEC28AE009B5BB3 /* legacy */ = {
 			isa = PBXGroup;
 			children = (
 				0996AE4B1ADDB5650022CF64 /* ZLMainTableViewController.swift */,
@@ -126,15 +140,21 @@
 				0996AE521ADDE12C0022CF64 /* ZLProjectCollectionViewCell.swift */,
 				099F56E31AEC2562006BFFC9 /* Models.swift */,
 			);
-			name = old;
+			name = legacy;
 			sourceTree = "<group>";
 		};
 		09614C741AEC4E52002C1F22 /* imgs */ = {
 			isa = PBXGroup;
 			children = (
 				09614C751AEC4E52002C1F22 /* horoscoper.png */,
+				091AB6CD1AEDAE4D00FF5B6D /* CamlBack.png */,
+				091AB6C11AED92F600FF5B6D /* home.jpg */,
+				091AB6BF1AED92A400FF5B6D /* me.jpg */,
 				09614C761AEC4E52002C1F22 /* intersolar.png */,
+				091AB6C51AEDA61000FF5B6D /* balancedVerticalLandscape.png */,
+				091AB6C71AEDA8EB00FF5B6D /* balancedVertical.png */,
 				09614C771AEC4E52002C1F22 /* intersolar2.png */,
+				091AB6C31AEDA5A500FF5B6D /* swipe.png */,
 				09614C781AEC4E52002C1F22 /* murmur.png */,
 				09614C791AEC4E52002C1F22 /* printf.png */,
 				09614C7A1AEC4E52002C1F22 /* prolog.jpg */,
@@ -174,10 +194,10 @@
 				099F56E51AEC27F6006BFFC9 /* ZLMainCollectionViewController.swift */,
 				091AB6BB1AED5E5E00FF5B6D /* ZLCollectionViewCell.swift */,
 				09614C961AEC62F8002C1F22 /* ZLSectionHeaderView.swift */,
+				091AB6BD1AED7A0500FF5B6D /* ZLWebViewController.swift */,
 				090C61351AEC2975009B5BB3 /* config.json */,
 				090C61371AEC3D6F009B5BB3 /* ZLCollectionReusableView.swift */,
 				091AB6B41AEC64F600FF5B6D /* Markdown.swift */,
-				090C61341AEC28AE009B5BB3 /* old */,
 				0996AE291ADB2DC30022CF64 /* Main.storyboard */,
 				0996AE2C1ADB2DC30022CF64 /* Images.xcassets */,
 				0996AE2E1ADB2DC30022CF64 /* LaunchScreen.xib */,
@@ -190,6 +210,7 @@
 		0996AE231ADB2DC30022CF64 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				090C61341AEC28AE009B5BB3 /* legacy */,
 				091AB6B71AEC691400FF5B6D /* Zhixuan Lai-Bridging-Header.h */,
 				0996AE241ADB2DC30022CF64 /* Info.plist */,
 			);
@@ -320,11 +341,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				091AB6C21AED92F600FF5B6D /* home.jpg in Resources */,
+				091AB6CE1AEDAE4D00FF5B6D /* CamlBack.png in Resources */,
+				091AB6C61AEDA61000FF5B6D /* balancedVerticalLandscape.png in Resources */,
 				09614C851AEC4E52002C1F22 /* spacinarium.png in Resources */,
 				09614C871AEC4E52002C1F22 /* timid-turtle.png in Resources */,
 				09614C801AEC4E52002C1F22 /* intersolar.png in Resources */,
 				09614C811AEC4E52002C1F22 /* intersolar2.png in Resources */,
 				09614C841AEC4E52002C1F22 /* prolog.jpg in Resources */,
+				091AB6C41AEDA5A500FF5B6D /* swipe.png in Resources */,
+				091AB6C01AED92A400FF5B6D /* me.jpg in Resources */,
 				09614C831AEC4E52002C1F22 /* printf.png in Resources */,
 				09614C7F1AEC4E52002C1F22 /* horoscoper.png in Resources */,
 				0996AE2B1ADB2DC30022CF64 /* Main.storyboard in Resources */,
@@ -332,6 +358,7 @@
 				09614C821AEC4E52002C1F22 /* murmur.png in Resources */,
 				09614C881AEC4E52002C1F22 /* trig-vs-dots.png in Resources */,
 				0996AE301ADB2DC30022CF64 /* LaunchScreen.xib in Resources */,
+				091AB6C81AEDA8EB00FF5B6D /* balancedVertical.png in Resources */,
 				09614C861AEC4E52002C1F22 /* talkly.png in Resources */,
 				0996AE2D1ADB2DC30022CF64 /* Images.xcassets in Resources */,
 			);
@@ -453,6 +480,7 @@
 				099F56E41AEC2562006BFFC9 /* Models.swift in Sources */,
 				099F56E61AEC27F6006BFFC9 /* ZLMainCollectionViewController.swift in Sources */,
 				0996AE511ADDDD1C0022CF64 /* ZLProjectsCollectionTableViewCell.swift in Sources */,
+				091AB6BE1AED7A0500FF5B6D /* ZLWebViewController.swift in Sources */,
 				0996AE261ADB2DC30022CF64 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

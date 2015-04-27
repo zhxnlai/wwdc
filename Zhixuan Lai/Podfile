@@ -1,8 +1,6 @@
 # Uncomment this line to define a global platform for your project
 # platform :ios, '6.0'
 
-pod 'AsyncDisplayKit'
-pod 'pop'
 pod 'SVWebViewController'
 pod 'ZLBalancedFlowLayout'
 pod 'ZLSwipeableView'
@@ -12,6 +10,5 @@ pod 'TTTAttributedLabel'
 
 
 link_with 'Zhixuan Lai', 'Zhixuan LaiTests'
-
 
 use_frameworks!

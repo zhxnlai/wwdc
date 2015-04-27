@@ -1,103 +1,135 @@
 {
-    "sections":
-    [
-	    {
-     "title": "Welcome",
-     "md":"##Welcome\n\nHi, my name is Zhixuan Lai. I am a undergraduate student at UCLA interested in client side application and programming language."
-	    },
-	    {
-     "title": "Projects",
-     "md":"##Projects\n\nI have played with many client side technologies."
-	    },
-	    {
-     "title": "Games",
-     "md":"###Games\n\nLast spring, I spent a lot of time with [Unity3d](http://unity3d.com/) game engine. It enabled me to make mobile multiplayer games using AR and VR technologies ([Vuforia](https://www.qualcomm.com/products/vuforia) and [Oculus Rift](https://www.oculus.com/)), two of which actually won me hackathon prices.",
-     "projects": [
-                  {
-                  "title": "Intersolar",
-                  "url": "http://zhxnlai.github.io/#/intersolar?hideNav",
-                  "img": "intersolar"
-                  },
-                  {
-                  "title": "Horoscoper",
-                  "url": "http://zhxnlai.github.io/#/horoscoper?hideNav",
-                  "img": "horoscoper"
-                  },
-                  {
-                  "title": "Spacinarium",
-                  "url": "http://zhxnlai.github.io/#/spacinarium?hideNav",
-                  "img": "spacinarium"
-                  },
-                  {
-                  "title": "Timid Turtle",
-                  "url": "http://zhxnlai.github.io/#/timid-turtle?hideNav",
-                  "img": "timid-turtle"
-                  },
-                  {
-                  "title": "Trig vs Dots",
-                  "url": "http://zhxnlai.github.io/#/trig-vs-dots?hideNav",
-                  "img": "trig-vs-dots"
-                  }
-                  ]
-	    },
-	    {
-     "title": "Apps",
-     "md":"###Apps\n\nLast summer, I cofounded a startup and got accepted into [StartupUCLA](http://startupucla.com/) summer accelerator, a ten-week program during which I and my co-founders developed two apps. I open sourced some of the UI components I wrote and received great feedbacks.",
-     "projects": [
-                  {
-                  "title": "Talkly",
-                  "url": "http://zhxnlai.github.io/#/talkly?hideNav",
-                  "img": "talkly"
-                  },
-                  {
-                  "title": "Murmur",
-                  "url": "http://zhxnlai.github.io/#/murmur?hideNav",
-                  "img": "murmur"
-                  }
-                  ]
-	    },
-	    {
-     "title": "Open Source",
-     "h2": "Last fall, ...",
-     "md":"###Open Source\n\nLast fall, ...",
-     "projects": [
-                  {
-                  "title": "ZLSwipeableView",
-                  "url": "http://zhxnlai.github.io/#/intersolar?hideNav",
-                  "img": "name"
-                  },
-                  {
-                  "title": "ZLBalancedFlowLayout",
-                  "url": "http://zhxnlai.github.io/#/horoscoper?hideNav",
-                  "img": "name"
-                  }
-                  ]
-	    },
-	    {
-     "title": "Research",
-     "h2": "Most recently, I started making websites declaratively using React.js and it feels great!",
-     "md": "###Research\n\nMost recently, I started making websites declaratively using React.js and it feels [great](https://facebook.github.io/react/docs/why-react.html)!",
-     "projects": [
-                  {
-                  "title": "Prolog Visualizer",
-                  "url": "http://zhxnlai.github.io/#/intersolar?hideNav",
-                  "img": "prolog"
-                  },
-                  {
-                  "title": "Printf Visualizer",
-                  "url": "http://zhxnlai.github.io/#/horoscoper?hideNav",
-                  "img": "printf"
-                  },
-                  {
-                  "title": "CamlBack",
-                  "url": "http://zhxnlai.github.io/#/horoscoper?hideNav",
-                  "img": "name"
-                  }
-                  ]
-	    },
-	    {
-     "title": "Contact",
-     "md": "##Contact\n\nPlease take a look at my Github (http://github.com/zhxnlai) for more information."
-	    }
-     ]
+    "style":[
+             "<style>",
+             "* {font-family: 'HelveticaNeue';}",
+             "h1,h2,h3,h4,h5,h6{font-weight:normal; line-height:1em; margin-top: 1em; margin-bottom: 14px;}",
+             "h4,h5,h6{ font-weight: bold; }",
+             "h1{ font-size:2.5em; }",
+             "h2{ font-size:2em; }",
+             "h3{ font-size:1.5em; }",
+             "h4{ font-size:1.2em; }",
+             "h5{ font-size:1em; }",
+             "h6{ font-size:0.9em; }",
+             "p { margin:1em 0;}",
+             "</style>"
+             ],
+    "open":"<div style=\"font-size: 16px; line-height:1.5em; padding:1em; color:'rgba(0, 0, 0, 0.87)'\">",
+    "close":"</div>",
+    "sections":[
+                {
+                "title":"Welcome",
+                "md":"##Welcome\n\nHi, my name is **Zhixuan Lai**. \n\nI am a undergraduate student at UCLA interested in client side application and programming language.\n\nI have been developing iOS apps since last summer and I absolutely enjoy it. I really want to go to WWDC 2015!",
+                "projects":[
+                            {
+                            "title":"",
+                            "img":"me"
+                            },
+                            {
+                            "title":"View from my appartment",
+                            "img":"home"
+                            }
+                            ]
+                },
+                {
+                "title":"Projects",
+                "md":"##Projects\n\nI have played with many client side technologies."
+                },
+                {
+                "title":"Games",
+                "md":"###Games\n\nLast spring, I spent a lot of time on learning [Unity3d](http://unity3d.com/) game engine. It enabled me to make mobile multiplayer games using AR and VR technologies (e.g. [Vuforia](https://www.qualcomm.com/products/vuforia) and [Oculus Rift](https://www.oculus.com/)), two of which (Horoscoper and Spacinarium) won me hackathon prices.",
+                "projects":[
+                            {
+                            "title":"Intersolar",
+                            "url":"http://zhxnlai.github.io/#/intersolar?hideNav",
+                            "img":"intersolar"
+                            },
+                            {
+                            "title":"Horoscoper",
+                            "url":"http://zhxnlai.github.io/#/horoscoper?hideNav",
+                            "img":"horoscoper"
+                            },
+                            {
+                            "title":"Spacinarium",
+                            "url":"http://zhxnlai.github.io/#/spacinarium?hideNav",
+                            "img":"spacinarium"
+                            },
+                            {
+                            "title":"Timid Turtle",
+                            "url":"http://zhxnlai.github.io/#/timid-turtle?hideNav",
+                            "img":"timid-turtle"
+                            },
+                            {
+                            "title":"Trig vs Dots",
+                            "url":"http://zhxnlai.github.io/#/trig-vs-dots?hideNav",
+                            "img":"trig-vs-dots"
+                            }
+                            ]
+                },
+                {
+                "title":"Apps",
+                "md":"###Apps\n\nLast summer, I co-founded a startup called [Axcelstudio](http://axcelstudio.strikingly.com/) and got accepted into [StartupUCLA](http://startupucla.com/) summer accelerator, a ten-week program during which I and my co-founders developed two apps, connected with alumni and pitched at VC firms including Lightspeed Venture Partners and DFJ venture.",
+                "projects":[
+                            {
+                            "title":"Talkly",
+                            "url":"http://zhxnlai.github.io/#/talkly?hideNav",
+                            "img":"talkly"
+                            },
+                            {
+                            "title":"Murmur",
+                            "url":"http://zhxnlai.github.io/#/murmur?hideNav",
+                            "img":"murmur"
+                            }
+                            ]
+                },
+                {
+                "title":"Code",
+                "md":"###Open Source\n\nLast fall, I open sourced some of the UI components I wrote and received great feedbacks. ZLSwipeableView, a tinder like interface developed for Murmur, made me a monthly trending Objective-C developer on Github.",
+                "projects":[
+                            {
+                            "title":"ZLSwipeableView",
+                            "darkTitle":true,
+                            "url":"https://github.com/zhxnlai/ZLSwipeableView",
+                            "img":"swipe"
+                            },
+                            {
+                            "title":"ZLBalancedFlowLayout",
+                            "darkTitle":true,
+                            "url":"https://github.com/zhxnlai/ZLBalancedFlowLayout",
+                            "img":"balancedVertical"
+                            }
+                            ]
+                },
+                {
+                "title":"Research",
+                "md":"###Research\n\nMost recently, I intern at Communication Design Group, working with [Alex Warth](http://www.tinlizzie.org/~awarth/) on a Prolog visualizer. The Prolog visualizer is a totally awesome tool that provides step by step visualization of prolog search tree. Alex and I tried to make it the best way to learn prolog and it is going to be battle tested in UCLA CS131 class in May.",
+                "projects":[
+                            {
+                            "title":"Prolog Visualizer",
+                            "darkTitle":true,
+                            "url":"http://www.cdglabs.org/prolog/",
+                            "img":"prolog"
+                            },
+                            {
+                            "title":"Printf Visualizer",
+                            "darkTitle":true,
+                            "url":"http://zhxnlai.github.io/printf/",
+                            "img":"printf"
+                            },
+                            {
+                            "title":"CamlBack",
+                            "darkTitle":true,
+                            "url":"https://camlback.github.io/",
+                            "img":"name"
+                            }
+                            ]
+                },
+                {
+                "title":"Contact",
+                "md":"##What's Next\n\nThis summer, I will be working for Youtube mobile app team at Google."
+                },
+                {
+                "title":"Contact",
+                "md":"##Contact\n\n- My email: zhxnlai@gmail.com\n- Github: http://github.com/zhxnlai\n- Portfolio site: http://zhxnlai.github.io"
+                }
+                ]
 }

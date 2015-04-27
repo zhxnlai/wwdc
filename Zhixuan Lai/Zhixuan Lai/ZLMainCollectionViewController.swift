@@ -18,22 +18,19 @@ class ZLMainCollectionViewController: UICollectionViewController, UICollectionVi
     
     private var sectionHeaderAttributedStrings: [NSAttributedString]?
     var markdown = Markdown()
-    var webViewController = SVWebViewController(address: "http://zhxnlai.github.io")
 
     var config: JSON? {
         didSet {
             if let sections = config?["sections"].array {
                 let mds = sections.map({json in json["md"].stringValue})
-                sectionHeaderAttributedStrings = mds.map({md in
-                    let style = join("", [  "<style>",
-                                            "    * {font-family: 'HelveticaNeue';}",
-"h1,h2,h3,h4,h5,h6{\nfont-weight:normal;\nline-height:1em;\n}\nh4,h5,h6{ font-weight: bold; }\nh1{ font-size:2.5em; }\nh2{ font-size:2em; }\nh3{ font-size:1.5em; }\nh4{ font-size:1.2em; }\nh5{ font-size:1em; }\nh6{ font-size:0.9em; }\n",
-                        "a{ color: #0645ad; text-decoration:none;}",
-//                        "p { margin:1em 0;}",
-                                            "</style>"])
-                    let outputHtml: String = style+"<div style=\"font-size: 15px; line-height:1.5em;\">"+self.markdown.transform(md)+"</div>"
-                    return NSAttributedString(data: outputHtml.dataUsingEncoding(NSUTF8StringEncoding)!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil, error: nil)!
-                })
+                if let styles = config?["style"].array?.map({json in json.stringValue}), open = config?["open"].string, close = config?["close"].string {
+                    let style = join("", styles)
+                    sectionHeaderAttributedStrings = mds.map({md in
+                        let outputHtml: String = style+open+self.markdown.transform(md)+close
+                        return NSAttributedString(data: outputHtml.dataUsingEncoding(NSUTF8StringEncoding)!, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil, error: nil)!
+                    })
+                }
+
                 collectionView?.reloadData()
             }
         }
@@ -62,21 +59,90 @@ class ZLMainCollectionViewController: UICollectionViewController, UICollectionVi
             config = JSON(data: configData)
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        webViewController.loadURL(NSURL(string: "http://zhxnlai.github.io"))
+        title = "Zhixuan"
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        updateToolbarItems()
 
-        title = "Zhixuan Lai"
-        
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self , action: Selector("refreshButtonAction:"))
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .Plain, target: self, action: Selector("settingsButtonAction:"))
-        
         collectionView?.backgroundColor = UIColor.whiteColor()
         collectionView?.registerClass(ZLCollectionViewCell.classForCoder(), forCellWithReuseIdentifier: cellIdentifier)
         collectionView?.registerClass(ZLSectionHeaderView.classForCoder(), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         collectionView?.registerClass(ZLCollectionReusableView.classForCoder(), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footerIdentifier)
+        
+        let remoteJSONURL = "https://www.dropbox.com/s/fdr1sg8ubf7g9td/config.json?dl=1"
+        if let data = NSData(contentsOfURL: NSURL(string: remoteJSONURL)!) {
+            config = JSON(data: data)
+            println("updated")
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setToolbarHidden(false, animated: animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.setToolbarHidden(true, animated: animated)
     }
 
+    // MARK: Toolbar
+    var homeBarButtonItem = UIBarButtonItem(image: UIImage(named: "home-toolbar")!, style: .Plain, action: {item in})
+    var gamesBarButtonItem = UIBarButtonItem(image: UIImage(named: "swords-toolbar")!, style: .Plain, action: {item in})
+    var appsBarButtonItem = UIBarButtonItem(image: UIImage(named: "ipod-touch")!, style: .Plain, action: {item in})
+    var codeBarButtonItem = UIBarButtonItem(image: UIImage(named: "github-toolbar")!, style: .Plain, action: {item in})
+    var researchBarButtonItem = UIBarButtonItem(image: UIImage(named: "graduation-cap-toolbar")!, style: .Plain, action: {item in})
+    
+    var currentSectionTitle = "Welcome"
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        if let indexPaths = collectionView?.indexPathsForVisibleItems() as? [NSIndexPath], let firstSection = indexPaths.first?.section, section = getSection(firstSection), title = section["title"].string {
+            if currentSectionTitle != title {
+                currentSectionTitle = title
+                updateToolbarItems()
+            }
+        }
+    }
+    
+    func updateToolbarItems() {
+        
+        homeBarButtonItem.addAction({item in self.scrollToSectionWithTitle("Welcome")})
+        gamesBarButtonItem.addAction({item in self.scrollToSectionWithTitle("Games")})
+        appsBarButtonItem.addAction({item in self.scrollToSectionWithTitle("Apps")})
+        codeBarButtonItem.addAction({item in self.scrollToSectionWithTitle("Code")})
+        researchBarButtonItem.addAction({item in self.scrollToSectionWithTitle("Research")})
+        
+        homeBarButtonItem.tintColor = currentSectionTitle == "Welcome" || currentSectionTitle == "Projects" ? view.tintColor : UIColor.grayColor()
+        gamesBarButtonItem.tintColor = currentSectionTitle == "Games" ? view.tintColor : UIColor.grayColor()
+        appsBarButtonItem.tintColor = currentSectionTitle == "Apps" ? view.tintColor : UIColor.grayColor()
+        codeBarButtonItem.tintColor = currentSectionTitle == "Code" ? view.tintColor : UIColor.grayColor()
+        researchBarButtonItem.tintColor = currentSectionTitle == "Research" ? view.tintColor : UIColor.grayColor()
+        
+        var fixedSpace = UIBarButtonItem(barButtonSystemItem: .FixedSpace, action: {item in})
+        var flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, action: {item in})
+        
+        var items = [fixedSpace, homeBarButtonItem, flexibleSpace, gamesBarButtonItem, flexibleSpace, appsBarButtonItem, flexibleSpace, codeBarButtonItem, flexibleSpace, researchBarButtonItem, fixedSpace]
+        toolbarItems = items
+    }
+
+    func scrollToSectionWithTitle(toTitle: String) {
+        if let sections = getSections() {
+            for sectionIdx in (0..<sections.count) {
+                let section = sections[sectionIdx]
+                if let title = section["title"].string {
+                    if title == toTitle {
+                        var attributes = collectionView?.layoutAttributesForItemAtIndexPath(NSIndexPath(forItem: 0, inSection: sectionIdx))
+                        var rect = attributes?.frame
+                        let headerSize = headerSizeForSection(sectionIdx)
+                        collectionView?.setContentOffset(CGPoint(x: 0, y: rect!.origin.y-headerSize.height-30), animated: true)
+                    }
+                }
+            }
+        }
+    }
+    
     // MARK: - UICollectionViewDataSource
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         if let numSections = getSections()?.count {
@@ -94,14 +160,16 @@ class ZLMainCollectionViewController: UICollectionViewController, UICollectionVi
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath) as! ZLCollectionViewCell
-//        var imageView = UIImageView(image: imageForIndexPath(indexPath))
-//        imageView.contentMode = .ScaleAspectFill
-//        cell.backgroundView = imageView
         if let project = projectForIndexPath(indexPath), titleString = project["title"].string {
             cell.title = titleString
+            if let darkTitle = project["darkTitle"].bool {
+                cell.darkTitle = darkTitle
+            } else {
+                cell.darkTitle = false
+            }
         }
         cell.image = imageForIndexPath(indexPath)
-//        cell.clipsToBounds = true
+        cell.clipsToBounds = true
         return cell
     }
     
@@ -130,6 +198,14 @@ class ZLMainCollectionViewController: UICollectionViewController, UICollectionVi
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return headerSizeForSection(section)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: 100, height: 20)
+    }
+    
+    func headerSizeForSection(section: Int) -> CGSize {
         if let attributedString = attributedStringForSection(section) {
             var size = TTTAttributedLabel.sizeThatFitsAttributedString(attributedString, withConstraints: ZLSectionHeaderView.labelMaxSize, limitedToNumberOfLines: 0)
             return size
@@ -137,17 +213,15 @@ class ZLMainCollectionViewController: UICollectionViewController, UICollectionVi
         return CGSizeZero
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSizeZero
-    }
-    
     // MARK: - UICollectionViewDelegate
-    
+    var webViewControllers = [String: SVWebViewController]()
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
         if let project = projectForIndexPath(indexPath), urlString = project["url"].string {
-            webViewController.loadURL(NSURL(string: urlString))
+            
+            var webViewController = SVWebViewController(address: urlString)
+            webViewController.title = project["title"].string
             navigationController?.pushViewController(webViewController, animated: true)
         }
     }
@@ -200,7 +274,5 @@ class ZLMainCollectionViewController: UICollectionViewController, UICollectionVi
         }
         return nil
     }
-
-    
 
 }

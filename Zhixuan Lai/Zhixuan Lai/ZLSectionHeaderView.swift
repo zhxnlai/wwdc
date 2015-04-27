@@ -35,21 +35,12 @@ class ZLSectionHeaderView: UICollectionReusableView {
         setup()
     }
     
-
     func setup() {
         label.numberOfLines = 0
         label.userInteractionEnabled = true
         label.enabledTextCheckingTypes = NSDataDetector(types: NSTextCheckingType.Link.rawValue | NSTextCheckingType.Dash.rawValue, error: nil)!.checkingTypes
-
-//        backgroundColor = UIColor.lightGrayColor()
-        label.textColor = UIColor.blackColor()
-//        label.enabledTextCheckingTypes = NSTextCheckingTypeLink;
-//        headerView.textAlignment = .Center
         addSubview(label)
-//        
         self.userInteractionEnabled = true
-
-
     }
 
     override func layoutSubviews() {

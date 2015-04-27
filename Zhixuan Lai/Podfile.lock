@@ -1,8 +1,4 @@
 PODS:
-  - AsyncDisplayKit (1.1.1):
-    - AsyncDisplayKit/ASDealloc2MainObject (= 1.1.1)
-  - AsyncDisplayKit/ASDealloc2MainObject (1.1.1)
-  - pop (1.0.7)
   - ReactiveUI (0.0.1)
   - SVWebViewController (1.0)
   - SwiftyJSON (2.2.0)
@@ -11,8 +7,6 @@ PODS:
   - ZLSwipeableView (0.0.7)
 
 DEPENDENCIES:
-  - AsyncDisplayKit
-  - pop
   - ReactiveUI
   - SVWebViewController
   - SwiftyJSON
@@ -21,8 +15,6 @@ DEPENDENCIES:
   - ZLSwipeableView
 
 SPEC CHECKSUMS:
-  AsyncDisplayKit: 2c355970d1aabe00608211d9a50e35b7a5dc0ae4
-  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   ReactiveUI: e1a2f6a6305af66179b3566b1a09bdfdb1973d20
   SVWebViewController: c36dda7326e81fcae0abf5d02bf7bbf7e41be901
   SwiftyJSON: 0b3e6c07af17ff745e77e8e9984097b55c956e5c
