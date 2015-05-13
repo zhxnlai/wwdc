@@ -34,10 +34,6 @@
 		0996AE2D1ADB2DC30022CF64 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0996AE2C1ADB2DC30022CF64 /* Images.xcassets */; };
 		0996AE301ADB2DC30022CF64 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0996AE2E1ADB2DC30022CF64 /* LaunchScreen.xib */; };
 		0996AE3C1ADB2DC30022CF64 /* Zhixuan_LaiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996AE3B1ADB2DC30022CF64 /* Zhixuan_LaiTests.swift */; };
-		0996AE4C1ADDB5650022CF64 /* ZLMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996AE4B1ADDB5650022CF64 /* ZLMainTableViewController.swift */; };
-		0996AE511ADDDD1C0022CF64 /* ZLProjectsCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996AE501ADDDD1C0022CF64 /* ZLProjectsCollectionTableViewCell.swift */; };
-		0996AE531ADDE12C0022CF64 /* ZLProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996AE521ADDE12C0022CF64 /* ZLProjectCollectionViewCell.swift */; };
-		099F56E41AEC2562006BFFC9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099F56E31AEC2562006BFFC9 /* Models.swift */; };
 		099F56E61AEC27F6006BFFC9 /* ZLMainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099F56E51AEC27F6006BFFC9 /* ZLMainCollectionViewController.swift */; };
 		0BE2711449E6FFC6C57380D0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCA8326612E0BE759AF404E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A2464B56A86F9D47B061F06E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCA8326612E0BE759AF404E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -99,10 +95,6 @@
 		0996AE351ADB2DC30022CF64 /* Zhixuan LaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zhixuan LaiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0996AE3A1ADB2DC30022CF64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0996AE3B1ADB2DC30022CF64 /* Zhixuan_LaiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zhixuan_LaiTests.swift; sourceTree = "<group>"; };
-		0996AE4B1ADDB5650022CF64 /* ZLMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLMainTableViewController.swift; sourceTree = "<group>"; };
-		0996AE501ADDDD1C0022CF64 /* ZLProjectsCollectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLProjectsCollectionTableViewCell.swift; sourceTree = "<group>"; };
-		0996AE521ADDE12C0022CF64 /* ZLProjectCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLProjectCollectionViewCell.swift; sourceTree = "<group>"; };
-		099F56E31AEC2562006BFFC9 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		099F56E51AEC27F6006BFFC9 /* ZLMainCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLMainCollectionViewController.swift; sourceTree = "<group>"; };
 		337BA60D99158BB672063A86 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4FD9CEA63AE85B8FB4F2EBC1 /* Pods-Zhixuan Lai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zhixuan Lai.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zhixuan Lai/Pods-Zhixuan Lai.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,17 +124,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		090C61341AEC28AE009B5BB3 /* legacy */ = {
-			isa = PBXGroup;
-			children = (
-				0996AE4B1ADDB5650022CF64 /* ZLMainTableViewController.swift */,
-				0996AE501ADDDD1C0022CF64 /* ZLProjectsCollectionTableViewCell.swift */,
-				0996AE521ADDE12C0022CF64 /* ZLProjectCollectionViewCell.swift */,
-				099F56E31AEC2562006BFFC9 /* Models.swift */,
-			);
-			name = legacy;
-			sourceTree = "<group>";
-		};
 		09614C741AEC4E52002C1F22 /* imgs */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +191,6 @@
 		0996AE231ADB2DC30022CF64 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				090C61341AEC28AE009B5BB3 /* legacy */,
 				091AB6B71AEC691400FF5B6D /* Zhixuan Lai-Bridging-Header.h */,
 				0996AE241ADB2DC30022CF64 /* Info.plist */,
 			);
@@ -475,11 +455,7 @@
 				09614C971AEC62F8002C1F22 /* ZLSectionHeaderView.swift in Sources */,
 				091AB6B51AEC64F600FF5B6D /* Markdown.swift in Sources */,
 				090C61381AEC3D6F009B5BB3 /* ZLCollectionReusableView.swift in Sources */,
-				0996AE531ADDE12C0022CF64 /* ZLProjectCollectionViewCell.swift in Sources */,
-				0996AE4C1ADDB5650022CF64 /* ZLMainTableViewController.swift in Sources */,
-				099F56E41AEC2562006BFFC9 /* Models.swift in Sources */,
 				099F56E61AEC27F6006BFFC9 /* ZLMainCollectionViewController.swift in Sources */,
-				0996AE511ADDDD1C0022CF64 /* ZLProjectsCollectionTableViewCell.swift in Sources */,
 				091AB6BE1AED7A0500FF5B6D /* ZLWebViewController.swift in Sources */,
 				0996AE261ADB2DC30022CF64 /* AppDelegate.swift in Sources */,
 			);
