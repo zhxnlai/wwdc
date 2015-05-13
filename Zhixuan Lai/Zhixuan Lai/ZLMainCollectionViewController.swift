@@ -71,11 +71,11 @@ class ZLMainCollectionViewController: UICollectionViewController, UICollectionVi
         collectionView?.registerClass(ZLSectionHeaderView.classForCoder(), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         collectionView?.registerClass(ZLCollectionReusableView.classForCoder(), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footerIdentifier)
         
-        let remoteJSONURL = "https://www.dropbox.com/s/fdr1sg8ubf7g9td/config.json?dl=1"
-        if let data = NSData(contentsOfURL: NSURL(string: remoteJSONURL)!) {
-            config = JSON(data: data)
-            println("updated")
-        }
+//        let remoteJSONURL = "https://www.dropbox.com/s/fdr1sg8ubf7g9td/config.json?dl=1"
+//        if let data = NSData(contentsOfURL: NSURL(string: remoteJSONURL)!) {
+//            config = JSON(data: data)
+//            println("updated")
+//        }
     }
     
     override func viewDidAppear(animated: Bool) {
